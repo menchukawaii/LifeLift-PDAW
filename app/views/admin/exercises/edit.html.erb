@@ -1,0 +1,10 @@
+<h1>Editing exercise</h1>
+
+<%= render "form", exercise: @exercise %>
+
+<br>
+
+<div>
+  <%= link_to "Ver", admin_exercise_path(@exercise) %> |
+  <%= link_to "Volver a ejercicios", admin_exercises_path %>
+</div>

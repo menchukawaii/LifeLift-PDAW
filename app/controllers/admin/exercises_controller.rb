@@ -1,10 +1,10 @@
-class ExercisesController < ApplicationController
-  before_action :set_exercise, only: %i[ show edit update destroy ]
+class Admin::ExercisesController < Admin::BaseController
+  before_action :set_exercise, only: %i[show edit update destroy]
 
   # GET /exercises or /exercises.json
   def index
     @q = Exercise.ransack(params[:q])
-    @exercises = @q.result
+    @exercises = @q.result.page(params[:page])
   end
 
   # GET /exercises/1 or /exercises/1.json
@@ -59,13 +59,14 @@ class ExercisesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_exercise
-      @exercise = Exercise.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def exercise_params
-      params.require(:exercise).permit(:name, :muscle_group, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_exercise
+    @exercise = Exercise.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def exercise_params
+    params.require(:exercise).permit(:name, :muscle_group, :description)
+  end
 end

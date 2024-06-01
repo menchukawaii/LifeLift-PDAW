@@ -81,3 +81,5 @@ gem "ransack", "~> 4.1"
 gem "kaminari", "~> 1.2"
 
 gem "devise", "~> 4.9"
+
+gem "rails-i18n", "~> 7.0"
