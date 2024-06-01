@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Exercises</h1>
+
+<div id="exercises">
+  <%= render partial: "search" %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <%= content_tag :th, "Imagen" %>
+        <%= content_tag :th, sort_link(@q, :name, "Nombre", default_order: :desc) %>
+        <%= content_tag :th, sort_link(@q, :muscle_group, "Grupo Muscular", default_order: :desc) %>
+        <%= content_tag :th, "Descripcción" %>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exercises.each do |exercise| %>
+        <tr>
+          <%= content_tag :td, image_tag("#{exercise.name.parameterize}.png", width: "200px") %>
+          <%= content_tag :td, exercise.name %>
+          <%= content_tag :td, exercise.muscle_group %>
+          <%= content_tag :td, sanitize(exercise.description.truncate(50)) %>
+          <td>
+            <%= link_to "Ver", exercise_path(exercise), class: "btn btn-primary" %>
+          </td>
+          <td>
+            <%= link_to "Editar", edit_exercise_path(exercise), class: "btn btn-primary" %>
+          </td>
+          <td>
+            <%= button_to "Borrar", exercise_path(exercise), method: :delete, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New exercise", new_exercise_path %>
