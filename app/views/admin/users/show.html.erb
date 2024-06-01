@@ -23,6 +23,52 @@
 
 </div>
 
+<% if @user.inscription.present? %>
+  <div>
+    <h3>Inscripcción</h3>
+    <p>
+      <strong>Objetivos:</strong>
+      <%= @user.inscription.goal %>
+    </p>
+
+    <p>
+      <strong>Comentario:</strong>
+      <%= @user.inscription.comment %>
+    </p>
+
+    <p>
+      <strong>Edad:</strong>
+      <%= @user.inscription.age %>
+    </p>
+
+    <p>
+      <strong>Altura:</strong>
+      <%= @user.inscription.height %>
+    </p>
+
+    <p>
+      <strong>Peso:</strong>
+      <%= @user.inscription.weight %>
+    </p>
+
+    <p>
+      <strong>Objetivo Peso:</strong>
+      <%= @user.inscription.weight_goal %>
+    </p>
+
+    <p>
+      <strong>Porcentaje de Grasa Corporal:</strong>
+      <%= "#{ @user.inscription.body_fat }%" if @user.inscription.body_fat.present? %>
+    </p>
+
+    <p>
+      <strong>Objetivo Porcentaje de Grasa Corporal:</strong>
+      <%= "#{ @user.inscription.body_fat_goal }%" if @user.inscription.body_fat_goal.present? %>
+
+    </p>
+  </div>
+<% end %>
+
 <div>
   <%= link_to "Editar usuario", edit_admin_user_path(@user) %> |
   <%= link_to "Volver a usuarios", admin_users_path %>
