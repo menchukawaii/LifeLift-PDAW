@@ -26,7 +26,7 @@ class Admin::ExercisesController < Admin::BaseController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully created." }
+        format.html { redirect_to admin_exercise_url(@exercise), notice: "Exercise was successfully created." }
         format.json { render :show, status: :created, location: @exercise }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class Admin::ExercisesController < Admin::BaseController
   def update
     respond_to do |format|
       if @exercise.update(exercise_params)
-        format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully updated." }
+        format.html { redirect_to admin_exercise_url(@exercise), notice: "Exercise was successfully updated." }
         format.json { render :show, status: :ok, location: @exercise }
       else
         format.html { render :edit, status: :unprocessable_entity }

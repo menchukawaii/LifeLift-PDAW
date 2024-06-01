@@ -15,6 +15,10 @@
       <%= render partial: "home/menu" %>
     </header>
     <main class="container">
+      <%= content_tag :div, flash[:error], class: "alert alert-danger", role: "alert" if flash[:error].present? %>
+      <%= content_tag :div, flash[:alert], class: "alert alert-danger", role: "alert" if flash[:alert].present? %>
+      <%= content_tag :div, flash[:notice], class: "alert alert-success", role: "alert" if flash[:noti].present? %>
+
       <%= yield %>
     <main>
     <footer></footer>

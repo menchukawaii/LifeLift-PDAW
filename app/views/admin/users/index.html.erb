@@ -1,0 +1,48 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div id="users">
+  <%= render partial: "search" %>
+  <h2>Usuarios</h2>
+
+  <div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <%= content_tag :th, sort_link(@q, :name, "Nombre", default_order: :desc) %>
+        <%= content_tag :th, sort_link(@q, :email, "Email", default_order: :desc) %>
+        <%= content_tag :th, sort_link(@q, :is_admin, "Admin", default_order: :desc) %>
+        <%= content_tag :th, sort_link(@q, :is_trainer, "Entrenador", default_order: :desc) %>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <%= content_tag :td, user.name %>
+          <%= content_tag :td, user.email %>
+          <%= content_tag :td, user.is_admin ? "Si" : "No" %>
+          <%= content_tag :td, user.is_trainer ? "Si" : "No"%>
+          <td>
+            <%= link_to "Ver", admin_user_path(user), class: "btn btn-primary" %>
+          </td>
+          <td>
+            <%= link_to "Editar", edit_admin_user_path(user), class: "btn btn-primary" %>
+          </td>
+          <td>
+            <%= button_to "Borrar", admin_user_path(user), method: :delete, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div>
+  <%= paginate @users %>
+
+  <%= link_to "New user", new_admin_user_path, class: "btn btn-primary" %>
+</div>

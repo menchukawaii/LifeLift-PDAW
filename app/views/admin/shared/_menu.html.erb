@@ -12,10 +12,13 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "Ejercicios", admin_exercises_path, class: "nav-link  #{ "active" if params[:controller] == ""}" %>
+          <%= link_to "Usuarios", admin_users_path, class: "nav-link  #{ "active" if params[:controller] == "admin/users"}" %>
         </li>
-
       </ul>
+      <span class="navbar-text">
+        <%= link_to "Iniciar Sesión", new_user_session_path, class: "btn btn-primary" unless current_user %>
+        <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "btn btn-primary" if current_user %>
+      </span>
     </div>
   </div>
 </nav>
