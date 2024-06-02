@@ -11,9 +11,11 @@ class User < ApplicationRecord
   has_many :rutines
   has_many :trainer_rutines, class_name: "Rutine", foreign_key: "trainer_id"
 
+  belongs_to :trainer, class_name: "User", foreign_key: "trainer_id", optional: true
+  has_many :my_users, class_name: "User", foreign_key: "trainer_id"
+
 
   def self.ransackable_attributes(auth_object = nil)
     ["email", "is_admin", "is_trainer", "name"]
   end
-
 end

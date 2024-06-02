@@ -1,0 +1,9 @@
+<%= content_tag :h1, "Crear Rutina para #{@rutine.user.name} "%>
+
+<%= render "form", rutine: @rutine %>
+
+<br>
+
+<div>
+  <%= link_to "Volver a atrás", trainer_user_path(@user) %>
+</div>

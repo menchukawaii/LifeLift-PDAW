@@ -1,10 +1,10 @@
-<h1>Editing user</h1>
+<h1>Editando Usuario</h1>
 
 <%= render "form", user: @user %>
 
 <br>
 
 <div>
-  <%= link_to "Ver", admin_user_path(@user) %> |
-  <%= link_to "Volver a usuarios", admin_users_path %>
+  <%= link_to "Ver", admin_user_path(@user), class: "btn btn-primary" %>
+  <%= link_to "Volver a usuarios", admin_users_path, class: "btn btn-primary" %>
 </div>

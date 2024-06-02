@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-admin:
+admin:  
   email: "admin@lifelift.com"
   name: "Admin"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'Admin1234.') %>
@@ -20,3 +20,4 @@ carmen:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'Admin1234.') %>
   is_admin: false
   is_trainer: false
+  trainer: trainer 

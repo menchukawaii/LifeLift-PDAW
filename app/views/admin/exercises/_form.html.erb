@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :muscle_group, class: "form-label" %>
-    <%= form.text_field :muscle_group, class: "form-control" %>
+    <%= form.select :muscle_group, Exercise::MUSCLE_GROUP, {}, class: "form-control" %>
   </div>
 
   <div>

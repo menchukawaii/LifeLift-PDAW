@@ -1,23 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  goal: MyString
-  comment: MyText
-  age: 1
-  height: 1.5
-  weight: 1.5
-  weight_goal: 1.5
-  body_fat: 1.5
-  body_fat_goal: 1.5
-  user: one
+inscription_carmen:
+  goal: "musculo"
+  comment: "dafgshjdklfñgfodigaf"
+  age: 20
+  height: 1.58
+  weight: 51
+  weight_goal: 51
+  body_fat: 20
+  body_fat_goal: 20
+  user: carmen
 
-two:
-  goal: MyString
-  comment: MyText
-  age: 1
-  height: 1.5
-  weight: 1.5
-  weight_goal: 1.5
-  body_fat: 1.5
-  body_fat_goal: 1.5
-  user: two
+

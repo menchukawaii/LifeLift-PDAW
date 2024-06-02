@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.boolean :is_admin
       t.boolean :is_trainer
 
+      t.integer :trainer_id
+
       t.timestamps
     end
   end

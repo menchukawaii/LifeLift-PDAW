@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get "my-account", to: "trainers#my_account", as: :my_account
     get "users/:user", to: "trainers#user", as: :user
     resources :rutines
+    resources :rutine_sets, only: [:create, :destroy]
   end
 
   # Rutas Admin

@@ -50,9 +50,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_02_112308) do
     t.string "name"
     t.integer "day"
     t.integer "week"
-    t.string "nutrition"
+    t.string "nutrition", default: "Musculo", null: false
     t.integer "user_id", null: false
-    t.integer "trainer_id"
+    t.integer "trainer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_rutines_on_user_id"
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_02_112308) do
     t.string "name"
     t.boolean "is_admin"
     t.boolean "is_trainer"
+    t.integer "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false

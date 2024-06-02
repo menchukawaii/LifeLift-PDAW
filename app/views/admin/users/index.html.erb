@@ -1,6 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-
 <div id="users">
   <%= render partial: "search" %>
   <h2>Usuarios</h2>
@@ -11,8 +10,9 @@
       <tr>
         <%= content_tag :th, sort_link(@q, :name, "Nombre", default_order: :desc) %>
         <%= content_tag :th, sort_link(@q, :email, "Email", default_order: :desc) %>
-        <%= content_tag :th, sort_link(@q, :is_admin, "Admin", default_order: :desc) %>
-        <%= content_tag :th, sort_link(@q, :is_trainer, "Entrenador", default_order: :desc) %>
+        <%= content_tag :th, sort_link(@q, :is_admin, "Es Admin", default_order: :desc) %>
+        <%= content_tag :th, sort_link(@q, :is_trainer, "Es Entrenador", default_order: :desc) %>
+        <th>Entrenador</th>
         <th>Inscripcción</th>
         <th></th>
         <th></th>
@@ -26,6 +26,7 @@
           <%= content_tag :td, user.email %>
           <%= content_tag :td, user.is_admin ? "Si" : "No" %>
           <%= content_tag :td, user.is_trainer ? "Si" : "No" %>
+          <%= content_tag :td, user.trainer.present? ? user.trainer.name : "No tiene" %>
           <%= content_tag :td, user.inscription.present? ? "Si" : "No" %>
           <td>
             <%= link_to "Ver", admin_user_path(user), class: "btn btn-primary" %>
