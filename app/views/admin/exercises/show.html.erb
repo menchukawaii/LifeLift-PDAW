@@ -5,25 +5,25 @@
     <%= image_tag("#{@exercise.name.parameterize}.png", width: "500px") %>
   </p>
   <p>
-    <strong>Name:</strong>
+    <strong>Nombre:</strong>
     <%= @exercise.name %>
   </p>
 
   <p>
-    <strong>Muscle group:</strong>
+    <strong>Grupo muscular:</strong>
     <%= @exercise.muscle_group %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Descripcción:</strong>
     <%= @exercise.description.html_safe %>
   </p>
 
 </div>
 
 <div>
-  <%= link_to "Editar ejercicio", edit_admin_exercise_path(@exercise) %> |
-  <%= link_to "Volver a ejercicios", admin_exercises_path %>
+  <%= link_to "Editar ejercicio", edit_admin_exercise_path(@exercise), class: "btn btn-primary" %> |
+  <%= link_to "Volver a ejercicios", admin_exercises_path, class: "btn btn-primary" %>
 
-  <%= button_to "Borrar ejercicio", admin_exercise_path(@exercise), method: :delete %>
+  <%= button_to "Borrar ejercicio", admin_exercise_path(@exercise), method: :delete, class: "btn btn-primary" %>
 </div>

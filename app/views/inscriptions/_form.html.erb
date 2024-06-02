@@ -1,0 +1,57 @@
+<%= form_with(model: inscription) do |form| %>
+  <% if inscription.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(inscription.errors.count, "error") %> prohibited this inscription from being saved:</h2>
+
+      <ul>
+        <% inscription.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <%= form.label :goal, class: "form-label" %>
+    <%= form.select :goal, Inscription::GOAL, {include_blank: true}, class: "form-control", required: true %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :comment, class: "form-label" %>
+    <%= form.text_area :comment, class: "form-control" %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :age, class: "form-label" %>
+    <%= form.number_field :age, class: "form-control" , required: true%>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :height, class: "form-label" %>
+    <%= form.number_field :height, step: "0.1", class: "form-control", required: true %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :weight, class: "form-label" %>
+    <%= form.number_field :weight, step: "0.1", class: "form-control", required: true%>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :weight_goal, class: "form-label" %>
+    <%= form.number_field :weight_goal, step: "0.1", class: "form-control" %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :body_fat, class: "form-label" %>
+    <%= form.number_field :body_fat, step: "0.1", class: "form-control" %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :body_fat_goal, class: "form-label" %>
+    <%= form.number_field :body_fat_goal, step: "0.1", class: "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+<% end %>

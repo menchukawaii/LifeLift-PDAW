@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_01_170511) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_02_112308) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "muscle_group"
@@ -34,6 +34,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_170511) do
     t.index ["user_id"], name: "index_inscriptions_on_user_id"
   end
 
+  create_table "rutine_sets", force: :cascade do |t|
+    t.integer "exercise_id", null: false
+    t.integer "rutine_id", null: false
+    t.integer "reps"
+    t.integer "position"
+    t.boolean "is_done", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_rutine_sets_on_exercise_id"
+    t.index ["rutine_id"], name: "index_rutine_sets_on_rutine_id"
+  end
+
+  create_table "rutines", force: :cascade do |t|
+    t.string "name"
+    t.integer "day"
+    t.integer "week"
+    t.string "nutrition"
+    t.integer "user_id", null: false
+    t.integer "trainer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rutines_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "name"
@@ -47,4 +71,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_170511) do
   end
 
   add_foreign_key "inscriptions", "users"
+  add_foreign_key "rutine_sets", "exercises"
+  add_foreign_key "rutine_sets", "rutines"
+  add_foreign_key "rutines", "users"
 end
