@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class ExercisesTest < ApplicationSystemTestCase
   setup do
-    @exercise = exercises(:one)
+    @exercise = exercises(:press_banca)
   end
 
   test "visiting the index" do

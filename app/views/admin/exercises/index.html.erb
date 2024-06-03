@@ -1,6 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-
 <div id="exercises">
   <%= render partial: "search" %>
   <h2>Ejercicios</h2>
@@ -21,7 +20,7 @@
     <tbody>
       <% @exercises.each do |exercise| %>
         <tr>
-          <%= content_tag :td, image_tag("#{exercise.name.parameterize}.png", width: "200px") %>
+          <%= content_tag :td, image_tag("exercises/#{exercise.name.parameterize}.png", width: "200px") %>
           <%= content_tag :td, exercise.name %>
           <%= content_tag :td, exercise.muscle_group %>
           <%= content_tag :td, sanitize(exercise.description.truncate(50)) %>

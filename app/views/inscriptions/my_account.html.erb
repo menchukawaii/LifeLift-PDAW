@@ -1,0 +1,43 @@
+<h1>Área de entrenamiento</h1>
+<%= content_tag :h1, "Hola #{current_user.name}" %>
+
+<div>
+    <%#= image_tag("#{current_user.avatar}", width: "200px") %>
+</div>
+
+<div>
+    <%= link_to "Editar Inscripcción", edit_inscription_path(current_user.inscription), class: "btn btn-primary" %>
+</div>
+
+<h2>Nutrición</h2>
+
+<div id="rutines">
+  <h2>Rutinas</h2>
+
+  <div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre Rutina</th>
+        <th>Día</th>
+        <th>Semana</th>
+        <th>Nutrition</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.rutines.each do |rutine| %>
+        <tr>
+          <%= content_tag :td, rutine.name %>
+          <%= content_tag :td, rutine.day %>
+          <%= content_tag :td, rutine.week %>
+          <%= content_tag :td, rutine.nutrition %>
+          <td>
+            <%= link_to "Ver", view_rutine_path(rutine), class: "btn btn-primary" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

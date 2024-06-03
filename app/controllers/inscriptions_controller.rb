@@ -44,6 +44,17 @@ class InscriptionsController < ApplicationController
     redirect_to action: :new if current_user.inscription.blank?
   end
 
+  def view_rutine
+    @rutine = current_user.rutines.find(params[:rutine])
+  end
+
+  def done_rutine_set
+    @rutine_set = current_user.rutine_sets.find(params[:set])
+    @rutine_set.is_done = true
+    @rutine_set.save
+    redirect_back(fallback_location: home_path)
+  end
+
 
   private
 
