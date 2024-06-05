@@ -10,7 +10,9 @@ class User < ApplicationRecord
   has_one :inscription
   has_many :rutines
   has_many :rutine_sets, through: :rutines
+
   has_many :trainer_rutines, class_name: "Rutine", foreign_key: "trainer_id"
+  # has_many :trainer_rutine_sets, through: :trainer_rutines, class_name: "RutineSet", foreign_key: "rutine_id"
 
   belongs_to :trainer, class_name: "User", foreign_key: "trainer_id", optional: true
   has_many :my_users, class_name: "User", foreign_key: "trainer_id"

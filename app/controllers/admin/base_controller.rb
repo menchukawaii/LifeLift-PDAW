@@ -7,7 +7,7 @@ class Admin::BaseController < ApplicationController
   def check_admin_user
     unless current_user.is_admin
       flash[:error] = "No tienes acceso"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
 end

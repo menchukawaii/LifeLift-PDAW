@@ -4,6 +4,5 @@ class Rutine < ApplicationRecord
 
   has_many :rutine_sets, dependent: :destroy
 
-
-  NUTRITION = ["Musculo", "Peso", "Recomposicion"]
+  NUTRITION = ["BajoGrasa", "BajoHidratos", "AltoHidratos"]
 end

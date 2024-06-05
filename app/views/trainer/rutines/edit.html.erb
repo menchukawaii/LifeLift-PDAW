@@ -1,3 +1,4 @@
+<main class="mb-5 container">
 <%= content_tag :h1, "Editar Rutina para #{@rutine.user.name} "%>
 
 <%= render "form", rutine: @rutine %>
@@ -13,6 +14,7 @@
       <tr>
         <th colspan="2">Ejercicio</th>
         <th>Repeticiones</th>
+        <th>Peso</th>
         <th></th>
       </tr>
     </thead>
@@ -26,7 +28,10 @@
           <%= content_tag :td, set.exercise.try(:name) %>
           <%= content_tag :td, set.reps %>
           <td>
-            <%= button_to "Borrar", trainer_rutine_set_path(rutine_set: set), method: :delete, class: "btn btn-danger" %>
+            <%= "#{set.weight} Kg" if set.weight.present? %>
+          </td>
+          <td>
+            <%= button_to "Borrar", trainer_rutine_set_path(set: set, rutine_id: @rutine), method: :delete, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>
@@ -50,14 +55,19 @@
     </div>
   <% end %>
 
+  <div class="mt-2">
+    <%= form.label :exercise, "Ejercicio", class: "form-label" %>
+    <%= form.collection_select(:exercise_id, Exercise.all, :id, :name, {}, class: "form-control") %>
+  </div>
+
   <div class="mt-4">
     <%= form.label :reps, "Repeticiones", class: "form-label" %>
     <%= form.number_field :reps, class: "form-control" %>
   </div>
 
-  <div class="mt-2">
-    <%= form.label :exercise, "Ejercicio", class: "form-label" %>
-    <%= form.collection_select(:exercise_id, Exercise.all, :id, :name, {}, class: "form-control") %>
+  <div class="mt-4">
+    <%= form.label :weight, "Peso", class: "form-label" %>
+    <%= form.number_field :weight, class: "form-control" %>
   </div>
 
   <div class="mt-3">
@@ -69,3 +79,4 @@
 <div>
   <%= link_to "Volver a atrás", trainer_user_path(@rutine.user), class: "btn btn-primary" %>
 </div>
+</main>

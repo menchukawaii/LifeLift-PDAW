@@ -22,7 +22,7 @@
         <tr>
           <%= content_tag :td, image_tag("exercises/#{exercise.name.parameterize}.png", width: "200px") %>
           <%= content_tag :td, exercise.name %>
-          <%= content_tag :td, exercise.muscle_group %>
+          <%= content_tag :td, t("opt_muscle_group.#{exercise.muscle_group}") %>
           <%= content_tag :td, sanitize(exercise.description.truncate(50)) %>
           <td>
             <%= link_to "Ver", admin_exercise_path(exercise), class: "btn btn-primary" %>

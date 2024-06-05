@@ -16,6 +16,185 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+:root{
+    --font-family: "Mulish", sans-serif;
+    --headins-font-family: "Montserrat", sans-serif;
+
+    --color-background-dark: #10131C;
+    --color-purple: #A22FF1;
+    --color-purple-hover: #66129e;
+
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--color-purple);
+    --bs-btn-border-color: var(--color-purple);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--color-purple-hover);
+    --bs-btn-hover-border-color: var(--color-purple-hover);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--color-purple-hover);
+    --bs-btn-active-border-color: var(--color-purple-hover);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: grey;
+    --bs-btn-disabled-border-color: grey;
+}
+
+body{
+    font-family: var(--font-family);
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--headins-font-family);
+}
+
+.btn{
+    font-weight: bold;
+}
+
+// MENÚ ___________________________________________________________________________________________________
+.menu-light .navbar-brand-text{
+    font-size: 25px;
+    font-family: var(--headins-font-family);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+// HOME ___________________________________________________________________________________________________
+#main-home, #menu-home{
+    background-color: var(--color-background-dark);
+}
+
+
+ #menu-home .navbar-brand-text{
+    color: white;
+    font-size: 25px;
+    font-family: var(--headins-font-family);
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+#banner-home{
+    background-color: var(--color-background-dark);
+    background-image: url("mujer-pino.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+#banner-title{
+    width: 65%;
+    padding: 5%;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(to right,  var(--color-background-dark) 10%, transparent);
+    min-height: 300px;
+}
+
+#banner-title h3{
+    font-weight: 300;
+    font-size: 18px;
+}
+#banner-title h2{
+    font-weight: 800;
+    font-size: 25px;
+}
+#banner-title p{
+    font-weight: 300;
+    font-size: 14px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #banner-title h3{
+        font-weight: 300;
+        font-size: 18px;
+    }
+    #banner-title h2{
+        font-weight: 800;
+        font-size: 25px;
+        margin: 20px 0;
+    }
+    #banner-title p{
+        font-weight: 300;
+        font-size: 14px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #banner-title{
+        min-height: 80vh;
+    }
+    
+    #banner-title h3{
+        font-weight: 300;
+        font-size: 26px;
+    }
+    #banner-title h2{
+        font-weight: 800;
+        font-size: 35px;
+        margin: 30px 0 50px 0;
+    }
+    #banner-title p{
+        font-weight: 300;
+        font-size: 22px;
+    }
+    #banner-title #banner-btn{
+        font-size: 20px;
+        padding: 20px 40px;
+        margin-top: 30px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #banner-title h3{
+        font-weight: 300;
+        font-size: 26px;
+    }
+    #banner-title h2{
+        font-weight: 800;
+        font-size: 35px;
+        // margin: 50px 0;
+    }
+    #banner-title p{
+        font-weight: 300;
+        font-size: 22px;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    #banner-title{
+        width: 60%;
+        padding: 10%;
+        min-height: 95vh;
+    }
+    
+    #banner-title h3{
+        font-weight: 400;
+        font-size: 35px;
+    }
+    #banner-title h2{
+        font-weight: 800;
+        font-size: 80px;
+        // margin: 50px 0;
+    }
+    #banner-title p{
+        font-weight: 300;
+        font-size: 25px;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}
+
 nav.pagination{
     padding: 20px 0;
     display: flex;

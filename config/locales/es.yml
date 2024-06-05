@@ -1,4 +1,17 @@
 es:
+  opt_muscle_group:
+    Pecho: "Pecho"
+    Pierna: "Pierna"
+    Espalda: "Espalda"
+    Core: "Core"
+  opt_nutrition:
+    BajoGrasa: "Día bajo en grasa"
+    BajoHidratos: "Día bajo en hidratos"
+    AltoHidratos: "Día alto en hidratos"
+  opt_goals:
+    Musculo: "Ganar masa muscular"
+    Peso: "Perder peso"
+    Recomposicion: "Perder grasa ganando/manteniedo la masa muscular"
   views:
     pagination:
       first: "&laquo; Primera"

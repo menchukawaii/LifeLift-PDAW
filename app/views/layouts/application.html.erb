@@ -3,6 +3,10 @@
   <head>
     <title>Lifelift</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+    </style>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,14 +16,17 @@
 
   <body>
     <header>
-      <%= render partial: "home/menu" %>
+      <% if current_user.present? %>
+        <%= render partial: "home/menu_logged" %>
+      <% else %>
+        <%= render partial: "home/menu" %>
+      <% end %>
     </header>
-    <main class="container mb-5">
+    <div class="container">
       <%= content_tag :div, flash[:error], class: "alert alert-danger", role: "alert" if flash[:error].present? %>
       <%= content_tag :div, flash[:alert], class: "alert alert-danger", role: "alert" if flash[:alert].present? %>
       <%= content_tag :div, flash[:notice], class: "alert alert-success", role: "alert" if flash[:noti].present? %>
-
-      <%= yield %>
-    <main>
+    </div>
+    <%= yield %>
   </body>
 </html>

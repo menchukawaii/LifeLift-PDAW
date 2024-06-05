@@ -1,101 +1,110 @@
-<div id="<%= dom_id @user %>">
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </p>
-
-</div>
-
-<% if @user.inscription.present? %>
-  <div>
-    <h3>Inscripcción</h3>
+<main class="mb-5 container">
+  <div id="<%= dom_id @user %>">
     <p>
-      <strong>Objetivos:</strong>
-      <%= @user.inscription.goal %>
+      <strong>Name:</strong>
+      <%= @user.name %>
     </p>
 
     <p>
-      <strong>Comentario:</strong>
-      <%= @user.inscription.comment %>
+      <strong>Email:</strong>
+      <%= @user.email %>
     </p>
 
-    <p>
-      <strong>Edad:</strong>
-      <%= @user.inscription.age %>
-    </p>
-
-    <p>
-      <strong>Altura:</strong>
-      <%= @user.inscription.height %>
-    </p>
-
-    <p>
-      <strong>Peso:</strong>
-      <%= @user.inscription.weight %>
-    </p>
-
-    <p>
-      <strong>Objetivo Peso:</strong>
-      <%= @user.inscription.weight_goal %>
-    </p>
-
-    <p>
-      <strong>Porcentaje de Grasa Corporal:</strong>
-      <%= "#{ @user.inscription.body_fat }%" if @user.inscription.body_fat.present? %>
-    </p>
-
-    <p>
-      <strong>Objetivo Porcentaje de Grasa Corporal:</strong>
-      <%= "#{ @user.inscription.body_fat_goal }%" if @user.inscription.body_fat_goal.present? %>
-
-    </p>
   </div>
-<% end %>
 
-<div id="rutines">
-  <h2>Rutines</h2>
+  <% if @user.inscription.present? %>
+    <div>
+      <h3>Inscripcción</h3>
+      <p>
+        <strong>Objetivos:</strong>
+        <%= @user.inscription.goal %>
+      </p>
 
-  <div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Nombre Rutina</th>
-        <th>Día</th>
-        <th>Semana</th>
-        <th>Nutrition</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% current_user.trainer_rutines.each do |rutine| %>
-        <tr>
-          <%= content_tag :td, rutine.name %>
-          <%= content_tag :td, rutine.day %>
-          <%= content_tag :td, rutine.week %>
-          <%= content_tag :td, rutine.nutrition %>
-          <td>
-            <%= link_to "Editar", edit_trainer_rutine_path(rutine), class: "btn btn-primary" %>
-          </td>
-          <td>
-            <%= button_to "Borrar", trainer_rutine_path(rutine), method: :delete, class: "btn btn-danger" %>
-          </td>
-        </tr>
+      <p>
+        <strong>Comentario:</strong>
+        <%= @user.inscription.comment %>
+      </p>
+
+      <p>
+        <strong>Edad:</strong>
+        <%= @user.inscription.age %>
+      </p>
+
+      <p>
+        <strong>Altura:</strong>
+        <%= @user.inscription.height %>
+      </p>
+
+      <p>
+        <strong>Peso:</strong>
+        <%= @user.inscription.weight %>
+      </p>
+
+      <p>
+        <strong>Objetivo Peso:</strong>
+        <%= @user.inscription.weight_goal %>
+      </p>
+
+      <p>
+        <strong>Porcentaje de Grasa Corporal:</strong>
+        <%= "#{ @user.inscription.body_fat }%" if @user.inscription.body_fat.present? %>
+      </p>
+
+      <p>
+        <strong>Objetivo Porcentaje de Grasa Corporal:</strong>
+        <%= "#{ @user.inscription.body_fat_goal }%" if @user.inscription.body_fat_goal.present? %>
+
+      </p>
+    </div>
+  <% end %>
+
+  <div id="rutines">
+    <h2>Rutines</h2>
+    <ul class="nav nav-tabs">
+      <% @weeks.each do |week| %>
+        <li class="nav-item">
+          <%= link_to "Semana #{week}", trainer_user_path(@user, week: week), class: "nav-link #{ "active" if week.to_s == @week }" %>
+        </li>
       <% end %>
-    </tbody>
-  </table>
+    </ul>
+
+    <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nombre Rutina</th>
+          <th>Día</th>
+          <th>Semana</th>
+          <th>Nutrition</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rutines.each do |rutine| %>
+          <tr>
+            <%= content_tag :td, rutine.name %>
+            <%= content_tag :td, rutine.day %>
+            <%= content_tag :td, rutine.week %>
+            <%= content_tag :td, t("opt_nutrition.#{rutine.nutrition}") %>
+            <td>
+              <%= link_to "Editar", edit_trainer_rutine_path(rutine), class: "btn btn-primary" %>
+            </td>
+            <td>
+              <%= button_to "Borrar", trainer_rutine_path(rutine), method: :delete, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
   </div>
-</div>
 
-<div>
-  <%= link_to "Crear Rutina", new_trainer_rutine_path(user: @user), class: "btn btn-primary" %>
-</div>
+  <div>
+    <%= link_to "Crear Rutina", new_trainer_rutine_path(user: @user), class: "btn btn-primary" %>
+  </div>
 
-<div>
-  <%= link_to "Volver a mis usuarios", trainer_my_account_path, class: "btn btn-primary" %>
-</div>
+  <div>
+    <%= link_to "Volver a mis usuarios", trainer_my_account_path, class: "btn btn-primary" %>
+  </div>
+</main>

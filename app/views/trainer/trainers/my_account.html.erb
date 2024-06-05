@@ -1,31 +1,31 @@
-<h1>Área de trabajo para entrenadores</h1>
+<main class="mb-5 container">
+  <h1>Área de trabajo para entrenadores</h1>
 
-<div id="users">
-  <%= render partial: "search" %>
-  <h2>Mis Usuarios</h2>
+  <div id="users">
+    <%= render partial: "search" %>
+    <h2>Mis Usuarios</h2>
 
-  <div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <%= content_tag :th, sort_link(@q, :name, "Nombre", default_order: :desc) %>
-        <%= content_tag :th, sort_link(@q, :email, "Email", default_order: :desc) %>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
+    <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
         <tr>
-          <%= content_tag :td, user.name %>
-          <%= content_tag :td, user.email %>
-          <td>
-            <%= link_to "Ver usuario", trainer_user_path(user), class: "btn btn-primary" %>
-          </td>
+          <%= content_tag :th, sort_link(@q, :name, "Nombre", default_order: :desc) %>
+          <%= content_tag :th, sort_link(@q, :email, "Email", default_order: :desc) %>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <%= content_tag :td, user.name %>
+            <%= content_tag :td, user.email %>
+            <td>
+              <%= link_to "Ver usuario", trainer_user_path(user), class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
   </div>
-</div>
-
-
+</main>

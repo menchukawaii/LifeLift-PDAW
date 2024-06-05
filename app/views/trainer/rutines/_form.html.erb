@@ -30,7 +30,7 @@
 
   <div class="mt-2">
     <%= form.label :nutrition, class: "form-label" %>
-    <%= form.select :nutrition, Rutine::NUTRITION, {}, class: "form-control" %>
+    <%= form.select :nutrition, Rutine::NUTRITION.map{|o| [t("opt_nutrition.#{o}"), o]}, {}, class: "form-control" %>
   </div>
 
 

@@ -38,7 +38,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_02_112308) do
     t.integer "exercise_id", null: false
     t.integer "rutine_id", null: false
     t.integer "reps"
-    t.integer "position"
+    t.integer "weight"
     t.boolean "is_done", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

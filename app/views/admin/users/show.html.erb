@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<div id="<%= dom_id @user %>">
+<div id="<%= dom_id @user %>" class="mb-4">
+  <h2 class="mb-4">Usuario: <%= @user.name %></h2>
   <p>
     <strong>Name:</strong>
     <%= @user.name %>
@@ -24,7 +25,7 @@
 </div>
 
 <% if @user.inscription.present? %>
-  <div>
+  <div class="mb-3">
     <h3>Inscripcción</h3>
     <p>
       <strong>Objetivos:</strong>
@@ -70,8 +71,9 @@
 <% end %>
 
 <div>
-  <%= link_to "Editar usuario", edit_admin_user_path(@user) %> |
-  <%= link_to "Volver a usuarios", admin_users_path %>
-
-  <%= button_to "Borrar usuario", admin_user_path(@user), method: :delete %>
+  <div class="d-flex mb-2">
+    <%= link_to "Editar usuario", edit_admin_user_path(@user), class: "btn btn-primary" %>
+    <%= button_to "Borrar usuario", admin_user_path(@user), method: :delete, class: "btn btn-danger" %>
+  </div>
+  <%= link_to "Volver a usuarios", admin_users_path, class: "btn btn-secondary" %>
 </div>

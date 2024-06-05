@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <div id="users">
-  <%= render partial: "search" %>
   <h2>Usuarios</h2>
+  <%= render partial: "search" %>
 
   <div class="table-responsive">
   <table class="table table-hover">
@@ -46,6 +46,4 @@
 
 <div>
   <%= paginate @users %>
-
-  <%= link_to "New user", new_admin_user_path, class: "btn btn-primary" %>
 </div>

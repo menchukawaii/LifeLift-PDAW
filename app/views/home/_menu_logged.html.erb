@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg menu-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <%= image_tag("logo-hoja-transparente.png", width: "60px") %>
+    </a>
+    <a class="navbar-brand navbar-brand-text" href="/">Lifelift</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <% if current_user.is_trainer %>
+            <%= link_to "Mi cuenta", trainer_my_account_path, class: "nav-link  #{ "active" if params[:controller] == "trainer/trainers"}" %>
+          <% else %>
+            <%= link_to "Mi cuenta", my_account_path, class: "nav-link  #{ "active" if params[:controller] == "inscriptions"}" %>
+          <% end %>
+        </li>
+      </ul>
+      <span class="">
+        <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      </span>
+    </div>
+  </div>
+</nav>

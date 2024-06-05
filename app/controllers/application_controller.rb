@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
   # reescribe devise para redireccionar despues de login
   # resource equivale a current_user
   def after_sign_in_path_for(resource)
-    if resource.is_trainer
+    if resource.is_admin
+      admin_users_path
+    elsif resource.is_trainer
       trainer_my_account_path
     else
       my_account_path

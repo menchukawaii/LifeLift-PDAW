@@ -13,7 +13,7 @@
 
   <div class="mt-4">
     <%= form.label :goal, class: "form-label" %>
-    <%= form.select :goal, Inscription::GOAL, {include_blank: true}, class: "form-control", required: true %>
+    <%= form.select :goal, Inscription::GOAL.map{|o| [t("opt_goal.#{o}"), o]}, {include_blank: true}, class: "form-control", required: true %>
   </div>
 
   <div class="mt-2">

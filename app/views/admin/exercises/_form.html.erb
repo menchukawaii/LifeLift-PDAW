@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :muscle_group, class: "form-label" %>
-    <%= form.select :muscle_group, Exercise::MUSCLE_GROUP, {}, class: "form-control" %>
+    <%= form.select :muscle_group, Exercise::MUSCLE_GROUP.map{|o| [t("opt_muscle_group.#{o}"), o]}, {}, class: "form-control" %>
   </div>
 
   <div>

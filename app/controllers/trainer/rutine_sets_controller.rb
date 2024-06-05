@@ -1,5 +1,5 @@
 class Trainer::RutineSetsController < Trainer::BaseController
-  # POST /rutines or /rutines.json
+
   def create
     @rutine = current_user.trainer_rutines.find params[:rutine_set][:rutine_id]
     @rutine_set = @rutine.rutine_sets.new(rutine_set_params)
@@ -15,13 +15,14 @@ class Trainer::RutineSetsController < Trainer::BaseController
     end
   end
 
-  # DELETE /rutines/1 or /rutines/1.json
   def destroy
-    @rutine.destroy!
+    @rutine = current_user.trainer_rutines.find params[:rutine_id]
+    @rutine_set = @rutine.rutine_sets.find params[:id]
+    @rutine_set.destroy!
 
     respond_to do |format|
       format.html do
-        flash[:notice] = "Rutine was successfully destroyed."
+        flash[:notice] = "Set was successfully destroyed."
         redirect_back(fallback_location: home_path)
       end
     end
@@ -31,6 +32,6 @@ class Trainer::RutineSetsController < Trainer::BaseController
 
   # Only allow a list of trusted parameters through.
   def rutine_set_params
-    params.require(:rutine_set).permit(:reps, :exercise_id)
+    params.require(:rutine_set).permit(:reps, :weight, :exercise_id)
   end
 end
