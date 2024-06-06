@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   # Rutas Admin
+  get "admin", to: redirect("/admin/users")
   namespace :admin do
     resources :exercises
     resources :users

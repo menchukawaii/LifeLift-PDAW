@@ -1,17 +1,171 @@
 # # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   name: MyString
-#   day: 1
-#   week: 1
-#   nutrition: MyString
-#   user: one
-#   trainer_id: 1
+# Se crean con un id concreto para que aparezcan ordenadas
 
-# two:
-#   name: MyString
-#   day: 1
-#   week: 1
-#   nutrition: MyString
-#   user: two
-#   trainer_id: 1
+# Semana 1 User Carmen
+day1week1:
+  id: 1
+  name: "Lunes Pecho"
+  day: 1
+  week: 1
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day2week1:
+  id: 2
+  name: "Miercoles Pierna"
+  day: 2
+  week: 1
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day3week1:
+  id: 3
+  name: "Viernes Espalda"
+  day: 3
+  week: 1
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+
+day4week1:
+  id: 4
+  name: "Sábado Core"
+  day: 4
+  week: 1
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+  
+# Semana 2 User Carmen
+day1week2:
+  id: 5
+  name: "Lunes Fullbody"
+  day: 1
+  week: 2
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day2week2:
+  id: 6
+  name: "Miercoles Pierna"
+  day: 2
+  week: 2
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day3week2:
+  id: 7
+  name: "Jueves Fullbody"
+  day: 3
+  week: 2
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+
+day4week2:
+  id: 8
+  name: "Sábado Pecho y Core"
+  day: 4
+  week: 2
+  nutrition: "BajoHidratos"
+  user: carmen
+  trainer: trainer
+
+# Semana 3 User Carmen
+day1week3:
+  id: 9
+  name: "Martes Pierna"
+  day: 1
+  week: 3
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day2week3:
+  id: 10
+  name: "Miercoles Brazos y Hombros"
+  day: 2
+  week: 3
+  nutrition: "BajoHidratos"
+  user: carmen
+  trainer: trainer
+
+day3week3:
+  id: 11
+  name: "Jueves Abdominales"
+  day: 3
+  week: 3
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+
+day4week3:
+  id: 12
+  name: "Viernes Fullbody"
+  day: 4
+  week: 3
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day5week3:
+  id: 13
+  name: "Sábado Abdominales"
+  day: 5
+  week: 3
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+
+# Semana 4 User Carmen
+day1week4:
+  id: 14
+  name: "Lunes Pecho y Hombro"
+  day: 2
+  week: 4
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day2week4:
+  id: 15
+  name: "Martes Circuito"
+  day: 2
+  week: 4
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day3week4:
+  id: 16
+  name: "Jueves Pierna y Gluteo"
+  day: 3
+  week: 4
+  nutrition: "AltoHidratos"
+  user: carmen
+  trainer: trainer
+
+day4week4:
+  id: 17
+  name: "Viernes Espalda y Biceps"
+  day: 4
+  week: 4
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+
+day5week4:
+  id: 18
+  name: "Sábado Abdominales"
+  day: 5
+  week: 4
+  nutrition: "BajoGrasa"
+  user: carmen
+  trainer: trainer
+
+  

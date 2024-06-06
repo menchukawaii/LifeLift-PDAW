@@ -1,15 +1,284 @@
 # # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   exercise: one
-#   rutine: one
-#   reps: 1
-#   position: 1
-#   is_done: false
+set1day1week1:
+  id: 1
+  exercise: flexiones
+  rutine_id: 1
+  reps: 25
+  weight: 0
 
-# two:
-#   exercise: two
-#   rutine: two
-#   reps: 1
-#   position: 1
-#   is_done: false
+set2day1week1:
+  id: 2
+  exercise: flexiones
+  rutine_id: 1
+  reps: 25
+  weight: 0
+
+set3day1week1:
+  id: 3
+  exercise: press_banca
+  rutine_id: 1
+  reps: 15
+  weight: 30
+
+set4day1week1:
+  id: 4
+  exercise: press_banca
+  rutine_id: 1
+  reps: 12
+  weight: 40
+
+set5day1week1:
+  id: 5
+  exercise: press_banca
+  rutine_id: 1
+  reps: 8
+  weight: 50
+
+set6day1week1:
+  id: 6
+  exercise: cruces_en_polea
+  rutine_id: 1
+  reps: 20
+  weight: 10
+
+set7day1week1:
+  id: 7
+  exercise: cruces_en_polea
+  rutine_id: 1
+  reps: 20
+  weight: 10
+
+# Semana 4__________________________________________________________________________________________________
+# __________________________________________________________________________________________________________
+set1day1week4:
+  id: 50
+  exercise: flexiones
+  rutine_id: 14
+  reps: 25
+  weight: 0
+
+set2day1week4:
+  id: 51
+  exercise: flexiones
+  rutine_id: 14
+  reps: 25
+  weight: 0
+
+set3day1week4:
+  id: 52
+  exercise: press_banca
+  rutine_id: 14
+  reps: 15
+  weight: 30
+
+set4day1week4:
+  id: 53
+  exercise: press_banca
+  rutine_id: 14
+  reps: 12
+  weight: 40
+
+set5day1week4:
+  id: 54
+  exercise: press_banca
+  rutine_id: 14
+  reps: 8
+  weight: 50
+
+set6day1week4:
+  id: 55
+  exercise: cruces_en_polea
+  rutine_id: 14
+  reps: 20
+  weight: 10
+
+set7day1week4:
+  id: 56
+  exercise: cruces_en_polea
+  rutine_id: 14
+  reps: 20
+  weight: 10
+
+# Dia 2
+set1day2week4:
+  id: 57
+  exercise: flexiones
+  rutine_id: 15
+  reps: 25
+  weight: 0
+
+set2day2week4:
+  id: 58
+  exercise: dominadas
+  rutine_id: 15
+  reps: 25
+  weight: 0
+
+set3day2week4:
+  id: 59
+  exercise: sentadilla
+  rutine_id: 15
+  reps: 15
+  weight: 30
+
+set4day2week4:
+  id: 60
+  exercise: crunch
+  rutine_id: 15
+  reps: 12
+  weight: 40
+
+set5day2week4:
+  id: 61
+  exercise: flexiones
+  rutine_id: 15
+  reps: 25
+  weight: 0
+
+set6day2week4:
+  id: 62
+  exercise: dominadas
+  rutine_id: 15
+  reps: 25
+  weight: 0
+
+set7day2week4:
+  id: 63
+  exercise: sentadilla
+  rutine_id: 15
+  reps: 15
+  weight: 30
+
+set8day2week4:
+  id: 64
+  exercise: crunch
+  rutine_id: 15
+  reps: 12
+  weight: 40
+
+# dia 3
+
+set1day3week4:
+  id: 65
+  exercise: sentadilla
+  rutine_id: 16
+  reps: 25
+  weight: 0
+
+set2day3week4:
+  id: 66
+  exercise: sentadilla
+  rutine_id: 16
+  reps: 25
+  weight: 0
+
+set3day3week4:
+  id: 67
+  exercise: sentadilla
+  rutine_id: 16
+  reps: 15
+  weight: 30
+
+set4day3week4:
+  id: 68
+  exercise: peso_muerto
+  rutine_id: 16
+  reps: 12
+  weight: 40
+
+set5day3week4:
+  id: 69
+  exercise: peso_muerto
+  rutine_id: 16
+  reps: 25
+  weight: 0
+
+set6day3week4:
+  id: 70
+  exercise: hip_thrust
+  rutine_id: 16
+  reps: 25
+  weight: 0
+
+set7day3week4:
+  id: 71
+  exercise: hip_thrust
+  rutine_id: 16
+  reps: 15
+  weight: 30
+
+set8day3week4:
+  id: 72
+  exercise: hip_thrust
+  rutine_id: 16
+  reps: 12
+  weight: 40
+
+# dia 4
+
+set1day4week4:
+  id: 73
+  exercise: dominadas
+  rutine_id: 17
+  reps: 8
+  weight: 0
+
+set2day4week4:
+  id: 74
+  exercise: dominadas
+  rutine_id: 17
+  reps: 8
+  weight: 0
+
+set3day4week4:
+  id: 75
+  exercise: remo_con_barra
+  rutine_id: 17
+  reps: 12
+  weight: 30
+
+set4day4week4:
+  id: 76
+  exercise: remo_con_barra
+  rutine_id: 17
+  reps: 12
+  weight: 40
+
+set5day4week4:
+  id: 77
+  exercise: jalon_en_polea
+  rutine_id: 17
+  reps: 12
+  weight: 50
+
+set6day4week4:
+  id: 78
+  exercise: jalon_en_polea
+  rutine_id: 17
+  reps: 12
+  weight: 50
+
+
+# dia 5
+
+set1day5week4:
+  id: 79
+  exercise: crunch
+  rutine_id: 18
+  reps: 50
+  weight: 
+
+set2day5week4:
+  id: 80
+  exercise: toes_to_bar
+  rutine_id: 18
+  reps: 30
+  weight: 
+
+set2day5week4:
+  id: 81
+  exercise: plancha
+  rutine_id: 18
+  reps: 130
+  weight: 

@@ -42,6 +42,13 @@ class InscriptionsController < ApplicationController
 
   def my_account
     redirect_to action: :new if current_user.inscription.blank?
+
+    @rutines = current_user.rutines
+    @weeks = @rutines.distinct.order(week: :desc).pluck(:week) # pluck devuelve solo un campo de la tabla
+    redirect_to my_account_path(current_user, week: @weeks.first) if @weeks.present? && params[:week].blank?
+
+    @week = params[:week]
+    @rutines_week = @rutines.where(week: @week)
   end
 
   def view_rutine

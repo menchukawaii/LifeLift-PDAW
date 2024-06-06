@@ -2,12 +2,16 @@
 
   <div class="">
     <%= f.label :name_cont, "Buscar por nombre:", class: "form-label" %>
-    <%= f.search_field :name_cont, class: "form-control" %>
-
+    <div class="input-group mb-3">
+      <%= f.search_field :name_cont, class: "form-control" %>
+      <%= f.submit "Buscar", class: "btn btn-outline-secondary" %>
+    </div>
+    
     <%= f.label :muscle_group_eq, "Buscar por grupo muscular:", class: "form-label" %>
-    <%= f.select :muscle_group_eq, Exercise::MUSCLE_GROUP.map{|o| [t("opt_muscle_group.#{o}"), o]}, {include_blank: true}, class: "form-control" %>
-
-    <%= f.submit "Buscar", class: "btn btn-secondary mt-3" %>
+    <div class="input-group mb-3">
+      <%= f.select :muscle_group_eq, Exercise::MUSCLE_GROUP.map{|o| [t("opt_muscle_group.#{o}"), o]}, {include_blank: true}, class: "form-control" %>
+      <%= f.submit "Buscar", class: "btn btn-outline-secondary" %>
+    </div>
   </div>
 
 <% end %>

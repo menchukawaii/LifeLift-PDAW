@@ -1,8 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
+<h2 class="mb-3">Panel de Administrador</h2>
+
 <div id="exercises">
+  <h2 class="mb-3">Ejercicios</h2>
   <%= render partial: "search" %>
-  <h2>Ejercicios</h2>
 
   <div class="table-responsive">
   <table class="table table-hover">
@@ -43,5 +45,6 @@
 <div>
   <%= paginate @exercises %>
 
-  <%= link_to "New exercise", new_admin_exercise_path, class: "btn btn-primary" %>
+  <%# Para añadir un nuevo ejercicio hay que pone primero la foto en assets/images/exercises con el mismo nombre %>
+  <%#= link_to "New exercise", new_admin_exercise_path, class: "btn btn-primary" %>
 </div>

@@ -1,6 +1,6 @@
 <main class="mb-5 container">
-  <h1>Área de entrenamiento</h1>
   <%= content_tag :h1, "Hola #{current_user.name}" %>
+  <h2>Área de entrenamiento</h2>
 
   <div>
       <%#= image_tag("#{current_user.avatar}", width: "200px") %>
@@ -15,34 +15,39 @@
 
   </div>
 
-  <div id="rutines">
-    <h2>Rutinas</h2>
-
-    <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Nombre Rutina</th>
-          <th>Día</th>
-          <th>Semana</th>
-          <th>Nutrition</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% current_user.rutines.each do |rutine| %>
-          <tr>
-            <%= content_tag :td, rutine.name %>
-            <%= content_tag :td, rutine.day %>
-            <%= content_tag :td, rutine.week %>
-            <%= content_tag :td, t("opt_nutrition.#{rutine.nutrition}") %>
-            <td>
-              <%= link_to "Ver", view_rutine_path(rutine), class: "btn btn-primary" %>
-            </td>
-          </tr>
+    <div id="rutines">
+      <h2>Rutinas</h2>
+      <ul class="nav nav-tabs">
+        <% @weeks.each do |week| %>
+          <li class="nav-item">
+            <%= link_to "Semana #{week}", my_account_path(current_user, week: week), class: "nav-link #{ "active" if week.to_s == @week }" %>
+          </li>
         <% end %>
-      </tbody>
-    </table>
+      </ul>
+
+      <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nombre Rutina</th>
+            <th>Día</th>
+            <th>Semana</th>
+            <th>Nutrition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rutines_week.each do |rutine| %>
+            <tr>
+              <td>
+                <%= link_to rutine.name, view_rutine_path(rutine), class: "btn btn-primary" %>
+              </td>
+              <%= content_tag :td, rutine.day %>
+              <%= content_tag :td, rutine.week %>
+              <%= content_tag :td, t("opt_nutrition.#{rutine.nutrition}") %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
     </div>
-  </div>
 </main>

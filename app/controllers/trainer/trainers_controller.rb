@@ -6,10 +6,10 @@ class Trainer::TrainersController < Trainer::BaseController
 
   def user
     @user = current_user.my_users.find params[:user]
-    @weeks = current_user.trainer_rutines.distinct.order(week: :desc).pluck(:week) # pluck devuelve solo un campo de la tabla
-    redirect_to trainer_user_path(@user, week: @weeks.first) if params[:week].blank?
+    @weeks = @user.rutines.distinct.order(week: :desc).pluck(:week) # pluck devuelve solo un campo de la tabla
+    redirect_to trainer_user_path(@user, week: @weeks.first) if @weeks.present? && params[:week].blank?
 
     @week = params[:week]
-    @rutines = current_user.trainer_rutines.where(week: @week)
+    @rutines = @user.rutines.where(week: @week)
   end
 end

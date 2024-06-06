@@ -15,7 +15,10 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+// VARIABLES ROOT ___________________________________________________________________________________________________
 :root{
     --font-family: "Mulish", sans-serif;
     --headins-font-family: "Montserrat", sans-serif;
@@ -23,7 +26,15 @@
     --color-background-dark: #10131C;
     --color-purple: #A22FF1;
     --color-purple-hover: #66129e;
+    --color-purple-light: #c68dec;
+    --color-purple-light-hover: #b177d7;
 
+}
+
+// BOOTSTRAP ___________________________________________________________________________________________________
+
+.btn{
+    font-weight: bold;
 }
 
 .btn-primary {
@@ -43,17 +54,62 @@
     --bs-btn-disabled-border-color: grey;
 }
 
+.btn-secondary {
+    --bs-btn-color: white;
+    --bs-btn-bg: var(--color-purple-light);
+    --bs-btn-border-color: var(--color-purple-light);
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--color-purple-light-hover);
+    --bs-btn-hover-border-color: var(--color-purple-light-hover);
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: var(--color-purple-light-hover);
+    --bs-btn-active-border-color: var(--color-purple-light-hover);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--color-background-dark);
+    --bs-btn-disabled-bg: #bebebf;
+    --bs-btn-disabled-border-color: #bebebf;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--color-purple-light);
+    --bs-btn-border-color: var(--color-purple-light);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--color-purple-light-hover);
+    --bs-btn-hover-border-color: var(--color-purple-light-hover);
+    --bs-btn-focus-shadow-rgb: 108, 117, 125;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--color-purple-light-hover);
+    --bs-btn-active-border-color: var(--color-purple-light-hover);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #bebebf;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #bebebf;
+    --bs-gradient: none;
+}
+
 body{
     font-family: var(--font-family);
+    // background-color: var(--color-purple-light);
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family: var(--headins-font-family);
 }
 
-.btn{
-    font-weight: bold;
+a{
+    color: var(--color-purple);
 }
+a:hover{
+    color: var(--color-purple-hover);
+}
+
+// #container-center-white{
+//     background-color: white;
+//     min-height: 100vh;
+//     padding: 0 5%;
+// }
+
 
 // MENÚ ___________________________________________________________________________________________________
 .menu-light .navbar-brand-text{
@@ -65,6 +121,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 // HOME ___________________________________________________________________________________________________
+#main-home{
+    min-height: 100vh;
+}
+
 #main-home, #menu-home{
     background-color: var(--color-background-dark);
 }
@@ -81,7 +141,7 @@ h1,h2,h3,h4,h5,h6{
 
 #banner-home{
     background-color: var(--color-background-dark);
-    background-image: url("mujer-pino.jpg");
+    background-image: url("mujer-pino-banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -92,7 +152,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 5%;
     color: white;
     text-transform: uppercase;
-    background: linear-gradient(to right,  var(--color-background-dark) 10%, transparent);
+    background: linear-gradient(to right,  var(--color-background-dark) 30%, transparent);
     min-height: 300px;
 }
 
@@ -202,10 +262,8 @@ nav.pagination{
     gap: 10px;
 }
 
-#sets tr input{
-    
-}
+// VIEW/INSCRIPTIONS ___________________________________________________________________________________________________
 #sets tr.done svg{
-    color: aquamarine; 
+    color: var(--color-purple); 
     width: 50px;   
 }

@@ -1,9 +1,10 @@
 <main class="mb-5 container">
-  <h1>Área de trabajo para entrenadores</h1>
+  <%= content_tag :h1, "Hola #{current_user.name}, estás en el Área de trabajo para entrenadores", class: "m-4" %>
+  <%# <h2 class="mb-3">Área de trabajo para entrenadores</h2> %>
 
   <div id="users">
+    <h2 class="mb-3">Mis Usuarios</h2>
     <%= render partial: "search" %>
-    <h2>Mis Usuarios</h2>
 
     <div class="table-responsive">
     <table class="table table-hover">
