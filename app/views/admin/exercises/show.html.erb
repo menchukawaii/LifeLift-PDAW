@@ -2,7 +2,7 @@
 
 <div id="<%= dom_id @exercise %>">
   <p>
-    <%= image_tag("#{@exercise.name.parameterize}.png", width: "500px") %>
+    <%= image_tag("exercises/#{@exercise.name.parameterize}.png", width: "500px") %>
   </p>
   <p>
     <strong>Nombre:</strong>
@@ -22,8 +22,8 @@
 </div>
 
 <div>
-  <%= link_to "Editar ejercicio", edit_admin_exercise_path(@exercise), class: "btn btn-primary" %>
-  <%= link_to "Volver a ejercicios", admin_exercises_path, class: "btn btn-secondary" %>
-
-  <%= button_to "Borrar ejercicio", admin_exercise_path(@exercise), method: :delete, class: "btn btn-danger" %>
+  <div class="d-flex mb-2">
+    <%= link_to "Editar ejercicio", edit_admin_exercise_path(@exercise), class: "btn btn-primary", style: "margin-right: 5px" %>
+  </div>
+    <%= link_to "Volver a ejercicios", admin_exercises_path, class: "btn btn-secondary" %>
 </div>

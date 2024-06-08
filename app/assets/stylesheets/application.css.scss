@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
@@ -26,8 +12,9 @@
     --color-background-dark: #10131C;
     --color-purple: #A22FF1;
     --color-purple-hover: #66129e;
-    --color-purple-light: #c68dec;
+    --color-purple-light: rgb(198, 141, 236);
     --color-purple-light-hover: #b177d7;
+		--color-purple-transparent: #b177d7;
 
 }
 
@@ -35,6 +22,7 @@
 
 .btn{
     font-weight: bold;
+		text-transform: uppercase;
 }
 
 .btn-primary {
@@ -93,6 +81,10 @@
 	--bs-navbar-toggler-border-color: rgba(white, 0.15);
 }
 
+.navbar.logged{
+	--bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2310131C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .navbar-toggler {
 	border: var(--bs-border-width) solid transparent;
 }
@@ -101,18 +93,55 @@
 	box-shadow: none;
 }
 
+.div-flash{
+	position: relative;	
+}
+.alert{
+	position: fixed;
+	z-index: 2;
+	text-align: center;
+	left: 0;
+	width: 100%;
+  // name duration timing-function delay iteration-count direction fill-mode;	
+  animation: fadeout 0.8s linear 3s forwards;
+}
+
+.table {
+	--bs-table-bg: #a22ff114;
+}
+
+.nav-tabs .nav-link.active{
+	color: var(--bs-nav-tabs-link-active-color);
+	background-color: #a22ff114;
+	border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+
+.nav-link {
+	color: var(--color-purple-hover);
+}
+
+.nav-link:hover, .nav-link:focus {
+	color: var(--color-purple);
+}
+
+.form-control {
+    background-color: transparent;
+}
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--color-purple-light);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #a22ff114;
+}
+
 body{
     font-family: var(--font-family);
 		position: relative;
 }
-  
+
 .img-bg {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	margin-top: -50px;
-	z-index: -1;
+	display: none;
 }
 
 
@@ -127,20 +156,54 @@ a:hover{
     color: var(--color-purple-hover);
 }
 
-// #container-center-white{
-//     background-color: white;
-//     min-height: 100vh;
-//     padding: 0 5%;
-// }
-
 
 // MENÚ ___________________________________________________________________________________________________
+
 .menu-light .navbar-brand-text{
     font-size: 25px;
+		color: var(--color-background-dark);
     font-family: var(--headins-font-family);
     text-transform: uppercase;
     font-weight: 500;
     margin-right: 15px;
+}
+
+.btn-login{
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right: 25px;
+}
+
+@media (max-width: 992px) {
+	.d-md-visible{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: right;
+		row-gap: 15px;
+	}
+
+}
+
+// FOOTER ___________________________________________________________________________________________________
+footer{
+	background-color: var(--color-background-dark);
+	padding: 50px 0;
+}
+
+footer .container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer .navbar-brand-text{
+	margin-left: 15px;
+}
+
+footer p{
+	color: white;
 }
 
 // HOME ___________________________________________________________________________________________________
@@ -153,7 +216,7 @@ a:hover{
 }
 
 
- #menu-home .navbar-brand-text{
+.navbar-brand-text{
     color: white;
     font-size: 25px;
     font-family: var(--headins-font-family);
@@ -191,6 +254,90 @@ a:hover{
     font-weight: 300;
     font-size: 14px;
 }
+
+// seccion 2
+// seccion2
+#section2-home{
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	padding: 5% 0;
+	row-gap: 25px;
+}
+
+#rutina-diseñada-para-ti{
+	// width: 40%;
+	text-align: center;
+}
+
+#rutina-diseñada-para-ti h3{
+	color: white;
+	font-size: 30px;
+}
+
+#rutina-diseñada-para-ti .btn{
+	margin-top: 30px;
+	width: 50%;
+}
+
+#mejora-tu{
+	// width: 50%;
+	padding: 5%;
+}
+
+#mejora-tu h4{
+	color: var(--color-purple);
+}
+
+
+#mejora-tu article{
+	display: grid;
+	grid-template-columns: 100px auto;
+	place-items: center;
+	column-gap: 25px;
+	margin-bottom: 25px;
+}
+
+#contact-home{
+	min-height: 90vh;
+	padding: 5%;
+}
+
+#contact-home h2{
+	color: white;
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 50px;
+}	
+
+#contact-cols{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 25px;
+}
+
+#info-contact{
+	width: 100%;
+	color:white
+}
+
+#form-contact{
+	width: 100%;
+	color:white
+}
+
+#form-contact .form-control:focus {
+	background-color: transparent;
+}
+
+#form-contact .form-control {
+	color: white
+}
+
+
 
 
 
@@ -234,6 +381,20 @@ nav.pagination{
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+// MY_ACCOUNT_USER______________________________________________________________________________________________________
+.nutrition-col{
+	background-color: #a22ff114;
+	padding: 30px;
+	margin-bottom: 15px;
+}
+
+// TRAINER_USER______________________________________________________________________________________________________
+.inscription-cols{
+	background-color: #a22ff114;
+	padding: 5%;
+	border-radius: 15px;
 }
 
 // VIEW/INSCRIPTIONS ___________________________________________________________________________________________________
@@ -303,27 +464,88 @@ nav.pagination{
 			font-weight: 300;
 			font-size: 22px;
 	}
+	
+	// seccion2
+	#section2-home{
+		flex-direction: row;
+		justify-content: space-between;
+		row-gap: 0;
+	}
+	
+	#rutina-diseñada-para-ti{
+		width: 40%;
+		text-align: left;
+	}
+
+	#rutina-diseñada-para-ti h3{
+		font-size: 40px;
+	}
+
+	#rutina-diseñada-para-ti .btn{
+		margin-top: 40px;
+	}
+
+	#mejora-tu{
+		width: 50%;
+		padding: 0;
+	}
+
+	#contact-home {
+		padding: 5% 0;
+	}	
+
+	// contacto
+	#contact-home h2{
+		font-size: 55px;
+		margin-bottom: 60px;
+	}	
+	
+	#contact-cols{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		row-gap: 25px;
+	}
+	
+	#info-contact{
+		width: 40%;
+	}
+	
+	#form-contact{
+		width: 50%;
+	}
+	
+
+	.img-bg {
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin-top: -50px;
+		z-index: -1;
+	}
 
 	// LOGIN ___________________________________________________________________________________________________
-.login{
-	display:flex;
-	align-items: center;
-	justify-content: space-between;
-}
+	.login{
+		display:flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-.login-form{
-	width: 35%;
-	padding: 5% 0 5% 5%;
-}
+	.login-form{
+		width: 35%;
+		padding: 5% 0 5% 5%;
+	}
 
-.login-img{
-	width: 60%;
-	height: 95vh;
-	background-image: url("mujer-abdominales.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top right;
-}
+	.login-img{
+		width: 60%;
+		height: 95vh;
+		background-image: url("mujer-abdominales.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top right;
+	}
 }
 
 
@@ -350,7 +572,20 @@ nav.pagination{
 			font-weight: 300;
 			font-size: 25px;
 	}
+
+	#rutina-diseñada-para-ti h3{
+		font-size: 55px;
+	}
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; 
+  }
+}

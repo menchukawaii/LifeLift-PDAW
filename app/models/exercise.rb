@@ -1,4 +1,5 @@
 class Exercise < ApplicationRecord
+  has_many :rutine_sets
   paginates_per 5
   MUSCLE_GROUP = ["Pecho", "Espalda", "Pierna", "Core"]
 

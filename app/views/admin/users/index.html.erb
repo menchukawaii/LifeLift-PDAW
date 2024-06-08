@@ -1,9 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h2 class="mb-3">Panel de Administrador</h2>
+<h2 class="mb-5">Panel de Administrador</h2>
 
 <div id="users">
-  <h2>Usuarios</h2>
+  <h2 class="text-center mb-3">Usuarios</h2>
   <%= render partial: "search" %>
 
   <div class="table-responsive">
@@ -31,7 +31,7 @@
           <%= content_tag :td, user.trainer.present? ? user.trainer.name : "No tiene" %>
           <%= content_tag :td, user.inscription.present? ? "Si" : "No" %>
           <td>
-            <%= link_to "Ver", admin_user_path(user), class: "btn btn-primary" %>
+            <%= link_to "Ver", admin_user_path(user), class: "btn btn-secondary" %>
           </td>
           <td>
             <%= link_to "Editar", edit_admin_user_path(user), class: "btn btn-primary" %>

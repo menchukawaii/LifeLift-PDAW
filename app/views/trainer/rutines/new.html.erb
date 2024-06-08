@@ -1,4 +1,4 @@
-<main class="mb-5 container">
+<main class="mb-5 mt-5 container">
   <%= content_tag :h1, "Crear Rutina para #{@rutine.user.name} "%>
 
   <%= render "form", rutine: @rutine %>
@@ -6,6 +6,6 @@
   <br>
 
   <div>
-    <%= link_to "Volver a atrás", trainer_user_path(@user) %>
+    <%= link_to "Volver a atrás", trainer_user_path(@user), class: "btn btn-primary" %>
   </div>
 </main>

@@ -1,65 +1,10 @@
-<main class="mb-5 container">
+<main class="mb-5 mt-5 container">
   <div id="<%= dom_id @user %>">
-    <p>
-      <strong>Name:</strong>
-      <%= @user.name %>
-    </p>
-
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-
+    <%= content_tag :h1, "Rutinas de #{@user.name}: #{@user.email}", class: "mb-5" %>
   </div>
 
-  <% if @user.inscription.present? %>
-    <div>
-      <h3>Inscripcción</h3>
-      <p>
-        <strong>Objetivos:</strong>
-        <%= @user.inscription.goal %>
-      </p>
-
-      <p>
-        <strong>Comentario:</strong>
-        <%= @user.inscription.comment %>
-      </p>
-
-      <p>
-        <strong>Edad:</strong>
-        <%= @user.inscription.age %>
-      </p>
-
-      <p>
-        <strong>Altura:</strong>
-        <%= @user.inscription.height %>
-      </p>
-
-      <p>
-        <strong>Peso:</strong>
-        <%= @user.inscription.weight %>
-      </p>
-
-      <p>
-        <strong>Objetivo Peso:</strong>
-        <%= @user.inscription.weight_goal %>
-      </p>
-
-      <p>
-        <strong>Porcentaje de Grasa Corporal:</strong>
-        <%= "#{ @user.inscription.body_fat }%" if @user.inscription.body_fat.present? %>
-      </p>
-
-      <p>
-        <strong>Objetivo Porcentaje de Grasa Corporal:</strong>
-        <%= "#{ @user.inscription.body_fat_goal }%" if @user.inscription.body_fat_goal.present? %>
-
-      </p>
-    </div>
-  <% end %>
-
   <div id="rutines">
-    <h2>Rutines</h2>
+    <h2 class="text-center mb-3 mt-3">Rutinas</h2>
     <ul class="nav nav-tabs">
       <% @weeks.each do |week| %>
         <li class="nav-item">
@@ -103,6 +48,56 @@
   <div>
     <%= link_to "Crear Rutina", new_trainer_rutine_path(user: @user), class: "btn btn-primary" %>
   </div>
+
+    <% if @user.inscription.present? %>
+    <h2 class="text-center mb-3 mt-3">Inscripcción</h2>
+    <div class="inscription-cols mb-5">
+      <p>
+        <strong>Objetivos:</strong>
+        <%= t("opt_goals.#{@user.inscription.goal}") %>
+      </p>
+      <p>
+        <strong>Edad:</strong>
+        <%= @user.inscription.age %>
+      </p>
+      <p>
+        <strong>Altura:</strong>
+        <%= @user.inscription.height %>
+      </p>
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          <p>
+            <strong>Peso:</strong>
+            <%= @user.inscription.weight %>
+          </p>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <p>
+            <strong>Objetivo Peso:</strong>
+            <%= @user.inscription.weight_goal %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          <p>
+            <strong>Porcentaje de Grasa Corporal:</strong>
+            <%= "#{ @user.inscription.body_fat }%" if @user.inscription.body_fat.present? %>
+          </p>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <p>
+            <strong>Objetivo Porcentaje de Grasa Corporal:</strong>
+            <%= "#{ @user.inscription.body_fat_goal }%" if @user.inscription.body_fat_goal.present? %>
+          </p>
+        </div>
+      </div>
+      <p>
+        <strong>Comentario:</strong>
+        <%= @user.inscription.comment %>
+      </p>
+    </div>
+  <% end %>
 
   <div>
     <%= link_to "Volver a mis usuarios", trainer_my_account_path, class: "btn btn-primary" %>

@@ -1,4 +1,19 @@
 es:
+  activerecord:  
+    models:
+      user: "Usuario"
+    attributes:
+      user:
+        name: "Nombre"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+  errors:
+    messages:
+      too_short:
+        one: "Es demasiado corto (1 carácter mínimo)"
+        other: "Es demasiado corto (%{count} caracteres mínimo)"
+      low_complexity: "Ha de contener al menos una mayúscula, una minúscula, dígito y un carácter especial."
+      confirmation: "Las contraseñas han de coincidir."
   opt_muscle_group:
     Pecho: "Pecho"
     Pierna: "Pierna"
@@ -11,7 +26,7 @@ es:
   opt_goals:
     Musculo: "Ganar masa muscular"
     Peso: "Perder peso"
-    Recomposicion: "Perder grasa ganando/manteniedo la masa muscular"
+    Ambas: "Perder grasa ganando/manteniedo la masa muscular"
   views:
     pagination:
       first: "&laquo; Primera"

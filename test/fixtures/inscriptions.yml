@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 inscription_carmen:
-  goal: "musculo"
+  goal: "Musculo"
   comment: "dafgshjdklfñgfodigaf"
   age: 20
   height: 1.58

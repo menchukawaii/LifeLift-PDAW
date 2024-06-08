@@ -15,7 +15,7 @@
       <header>
         <%= render partial: "admin/shared/menu" %>
       </header>
-      <main class="container mb-5">
+      <main class="container mb-5 mt-5">
 
         <%= content_tag :div, flash[:error], class: "alert alert-danger", role: "alert" if flash[:error].present? %>
         <%= content_tag :div, flash[:alert], class: "alert alert-danger", role: "alert" if flash[:alert].present? %>

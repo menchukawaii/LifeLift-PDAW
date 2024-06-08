@@ -1,9 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h2 class="mb-3">Panel de Administrador</h2>
+<h2 class="mb-5">Panel de Administrador</h2>
 
 <div id="exercises">
-  <h2 class="mb-3">Ejercicios</h2>
+  <h2 class="mb-3 text-center">Ejercicios</h2>
   <%= render partial: "search" %>
 
   <div class="table-responsive">
@@ -27,13 +27,14 @@
           <%= content_tag :td, t("opt_muscle_group.#{exercise.muscle_group}") %>
           <%= content_tag :td, sanitize(exercise.description.truncate(50)) %>
           <td>
-            <%= link_to "Ver", admin_exercise_path(exercise), class: "btn btn-primary" %>
+            <%= link_to "Ver", admin_exercise_path(exercise), class: "btn btn-secondary" %>
           </td>
           <td>
             <%= link_to "Editar", edit_admin_exercise_path(exercise), class: "btn btn-primary" %>
           </td>
           <td>
-            <%= button_to "Borrar", admin_exercise_path(exercise), method: :delete, class: "btn btn-danger" %>
+            <%# NO tiene sentido borrar ejercicios ya que se borrarian las rutinas a las que estén asignados %>
+            <%# <%= button_to "Borrar", admin_exercise_path(exercise), method: :delete, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>

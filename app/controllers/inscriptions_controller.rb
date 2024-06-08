@@ -18,11 +18,9 @@ class InscriptionsController < ApplicationController
 
     respond_to do |format|
       if @inscription.save
-        format.html { redirect_to admin_inscription_url(@inscription), notice: "Inscription was successfully created." }
-        format.json { render :show, status: :created, location: @inscription }
+        format.html { redirect_to my_account_path, notice: "Inscription was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @inscription.errors, status: :unprocessable_entity }
       end
     end
   end

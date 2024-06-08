@@ -17,7 +17,8 @@ class Trainer::RutineSetsController < Trainer::BaseController
 
   def destroy
     @rutine = current_user.trainer_rutines.find params[:rutine_id]
-    @rutine_set = @rutine.rutine_sets.find params[:id]
+    @rutine_set = @rutine.rutine_sets.find params[:rutine_set_id]
+
     @rutine_set.destroy!
 
     respond_to do |format|

@@ -1,5 +1,5 @@
-<main class="pb-5" id="main-home">
-    <section id="banner-home">
+<main class="" id="main-home">
+    <section id="banner-home" class="mb-5">
         <div id="banner-title">
             <h3>Si buscas mejorar tu</h3>
             <h2>Estilo de vida</h2>
@@ -8,4 +8,85 @@
             <%= link_to "Descúbrelo", my_account_path, class: "btn btn-primary", id: "banner-btn" %>
         </div>
     </section>
+
+    <section id="section2-home" class="container">
+        <div id="rutina-diseñada-para-ti">
+            <h3>Una rutina especialmente diseñada para ti</h3>
+            <%= link_to "Empieza ya", my_account_path, class: "btn btn-primary", id: "banner-btn" %>
+        </div>
+        <div id="mejora-tu">
+            <article>
+                <%= image_tag("mejora-tu-salud.png", width: "100px") %>
+                <div>
+                    <h4>Mejora tu salud</h4>
+                    <p>Crea hábitos saludables de forma fácil siguiendo una rutina que se adapte a tus horarios</p>
+                </div>
+            </article>
+
+            <article>
+                <%= image_tag("mejora-tu-autoestima.png", width: "100px") %>
+                <div>
+                    <h4>Mejora tu autoestima</h4>
+                    <p>Llevar un estilo de vida activo y saludable te hará verte y sentirte mejor</p>
+                </div>
+            </article>
+
+            <article>
+                <%= image_tag("mejora-tu-rendimiento.png", width: "100px") %>
+                <div>
+                    <h4>Mejora tu rendimiento deportivo</h4>
+                    <p>Consigue tus objetivos a deportivos ya sean recreativos o competitivos, con el asesoramiento de un profesional en el sector</p>
+                </div>
+            </article>
+
+            <article>
+                <%= image_tag("atencion-personalizada.png", width: "100px") %>
+                <div>
+                    <h4>Atención personalizada</h4>
+                    <p>Comunicación directa con un especialista que te asesorará durante todo el proceso</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact-home" class="container">
+			<h2>Contacto</h2>
+			<div id="contact-cols">
+        <div id="info-contact">
+					<h3 class="mb-4">Utiliza las siguientes vías de contacto o rellena el formulario</h3>
+					<p>Email: <a href="mailTo:carmengr36@educastur.es?subject=Contacto%20LifeLift">carmengr36@educastur.es</a></p>
+					<p>Teléfono: <a href="">999 999 999</a></p>
+        </div>
+
+        <div id="form-contact">
+            <form action="mailto:carmengr36@educastur.es" method="post" enctype="text/plain">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+			</div>
+    </section>
 </main>
+
+<footer>
+	<div class="container">
+		<div>
+			<a class="navbar-brand" href="/">
+					<%= image_tag("logo-hoja-transparente.png", width: "60px") %>
+				</a>
+			<a class="navbar-brand navbar-brand-text" href="/">Lifelift</a>
+		</div>
+		<p>Proyecto Fin de Ciclo DAW <a href="https://github.com/menchukawaii">Carmen García Rodríguez</a></p>
+	</div>
+</footer>

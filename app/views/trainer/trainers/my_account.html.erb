@@ -1,9 +1,9 @@
-<main class="mb-5 container">
-  <%= content_tag :h1, "Hola #{current_user.name}, estás en el Área de trabajo para entrenadores", class: "m-4" %>
+<main class="mb-5 mt-5 container">
+  <%= content_tag :h1, "Hola #{current_user.name}, estás en el Área de trabajo para entrenadores", class: "mb-5" %>
   <%# <h2 class="mb-3">Área de trabajo para entrenadores</h2> %>
 
   <div id="users">
-    <h2 class="mb-3">Mis Usuarios</h2>
+    <h2 class="text-center mb-3 mt-3">Mis Usuarios</h2>
     <%= render partial: "search" %>
 
     <div class="table-responsive">

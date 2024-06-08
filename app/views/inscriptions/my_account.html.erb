@@ -1,53 +1,83 @@
-<main class="mb-5 container">
-  <%= content_tag :h1, "Hola #{current_user.name}" %>
-  <h2>Área de entrenamiento</h2>
-
+<main class="mb-5 mt-5 container">
+  <%= content_tag :h1, "Área de entrenamiento de #{current_user.name}", class: "mb-5" %>
   <div>
-      <%#= image_tag("#{current_user.avatar}", width: "200px") %>
+    <%= link_to "Editar Inscripcción", edit_inscription_path(current_user.inscription), class: "btn btn-primary mb-4" %>
   </div>
 
-  <div>
-      <%= link_to "Editar Inscripcción", edit_inscription_path(current_user.inscription), class: "btn btn-primary mt-4 mb-4" %>
+  <div id="rutines" class="mb-4">
+    <h2 class="text-center">Rutinas</h2>
+    <ul class="nav nav-tabs">
+      <% @weeks.each do |week| %>
+        <li class="nav-item">
+          <%= link_to "Semana #{week}", my_account_path(current_user, week: week), class: "nav-link #{ "active" if week.to_s == @week }" %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nombre Rutina</th>
+          <th>Día</th>
+          <th>Semana</th>
+          <th>Nutrition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rutines_week.each do |rutine| %>
+          <tr>
+            <td>
+              <%= link_to rutine.name, view_rutine_path(rutine), class: "btn btn-primary" %>
+            </td>
+            <%= content_tag :td, rutine.day %>
+            <%= content_tag :td, rutine.week %>
+            <%= content_tag :td, t("opt_nutrition.#{rutine.nutrition}") %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
   </div>
 
   <div id="nutrition">
-    <h2>Nutrición</h2>
-
-  </div>
-
-    <div id="rutines">
-      <h2>Rutinas</h2>
-      <ul class="nav nav-tabs">
-        <% @weeks.each do |week| %>
-          <li class="nav-item">
-            <%= link_to "Semana #{week}", my_account_path(current_user, week: week), class: "nav-link #{ "active" if week.to_s == @week }" %>
-          </li>
-        <% end %>
-      </ul>
-
-      <div class="table-responsive">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Nombre Rutina</th>
-            <th>Día</th>
-            <th>Semana</th>
-            <th>Nutrition</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @rutines_week.each do |rutine| %>
-            <tr>
-              <td>
-                <%= link_to rutine.name, view_rutine_path(rutine), class: "btn btn-primary" %>
-              </td>
-              <%= content_tag :td, rutine.day %>
-              <%= content_tag :td, rutine.week %>
-              <%= content_tag :td, t("opt_nutrition.#{rutine.nutrition}") %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <h2 class="text-center mb-3 mt-3">Nutrición</h2>
+    <div class="row">
+      <div class="col-md-12 col-lg-4">
+        <div class="nutrition-col">
+          <h4>Dieta Baja en Hidratos de Carbono</h4>
+          <ul>
+            <li><strong>Consumo de Proteínas de Calidad:</strong> Incluye carnes magras, pescado, huevos, y productos lácteos bajos en grasa. Las proteínas ayudan a mantener la masa muscular y proporcionan saciedad.</li>
+            <li><strong>Verduras No Almidonadas:</strong> Enfócate en vegetales como espinacas, brócoli, coliflor, y pimientos. Son bajos en carbohidratos y ricos en nutrientes esenciales.</li>
+            <li><strong>Grasas Saludables:</strong> Incorpora aguacates, nueces, semillas, y aceites saludables como el aceite de oliva y el aceite de coco. Estas grasas proporcionan energía y promueven la salud cardiovascular.</li>
+            <li><strong>Hidratación Adecuada:</strong> Bebe suficiente agua a lo largo del día. Las dietas bajas en carbohidratos pueden tener un efecto diurético, por lo que es crucial mantenerse bien hidratado.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="nutrition-col">
+          <h4>Dieta Alta en Hidratos de Carbono</h4>
+          <ul>
+              <li><strong>Carbohidratos Complejos:</strong> Prioriza fuentes de carbohidratos complejos como cereales integrales (arroz integral, quinoa, avena), legumbres (lentejas, garbanzos) y tubérculos (patatas, batatas). Estos alimentos liberan energía de forma sostenida.</li>
+              <li><strong>Frutas y Verduras:</strong> Consume una amplia variedad de frutas y verduras frescas. Son ricas en vitaminas, minerales y fibra, que apoyan la digestión y la salud general.</li>
+              <li><strong>Proteínas Magras:</strong> No descuides la ingesta de proteínas. Opta por carnes magras, pescado, productos lácteos bajos en grasa, y proteínas vegetales como tofu y tempeh.</li>
+              <li><strong>Grasas Saludables:</strong> Aunque es una dieta alta en hidratos, incluye grasas saludables en cantidades moderadas, como nueces, semillas y aceites vegetales, para un perfil nutricional equilibrado.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="nutrition-col">
+          <h4>Dieta Baja en Grasas</h4>
+          <ul>
+              <li><strong>Proteínas Magras:</strong> Incluye fuentes de proteínas bajas en grasa como pollo sin piel, pavo, pescado blanco, y productos lácteos bajos en grasa o sin grasa.</li>
+              <li><strong>Carbohidratos Complejos y Fibra:</strong> Enfócate en carbohidratos integrales y ricos en fibra, como granos enteros (arroz integral, avena), legumbres, frutas y verduras. Estos alimentos ayudan a mantener niveles estables de energía y promueven la saciedad.</li>
+              <li><strong>Limitación de Grasas Saturadas y Trans:</strong> Evita alimentos altos en grasas saturadas y trans, como frituras, productos de panadería comerciales y carnes procesadas. Opta por métodos de cocción bajos en grasa como al vapor, hervido, al horno o a la parrilla.</li>
+              <li><strong>Consumo Moderado de Grasas Saludables:</strong> Asegúrate de incluir pequeñas cantidades de grasas insaturadas saludables, como las que se encuentran en el aceite de oliva, aguacates, y frutos secos, para mantener una dieta balanceada.</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
+
+
 </main>
