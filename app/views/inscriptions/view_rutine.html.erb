@@ -19,7 +19,7 @@
           <% next if set.new_record? %>
           <tr class="<%= "done" if set.is_done %>">
             <td style="width: 220px;">
-              <%= image_tag("exercises/#{set.exercise.name.parameterize}.png", width: "200px") if set.exercise.present? %>
+              <%= link_to(image_tag("exercises/#{set.exercise.name.parameterize}.png", width: "200px"), view_exercise_path(@rutine, exercise: set.exercise)) if set.exercise.present? %>
             </td>
             <%= content_tag :td, set.exercise.try(:name) %>
             <%= content_tag :td, set.reps %>

@@ -1,0 +1,24 @@
+<main class="mb-5 container">
+  <div id="<%= dom_id @exercise %>">
+    <%= content_tag :h2, @exercise.name, class: "mb-3 mt-3" %>
+    <p>
+      <%= image_tag("exercises/#{@exercise.name.parameterize}.png", width: "500px") %>
+    </p>
+    <p>
+      <strong>Nombre:</strong>
+      <%= @exercise.name %>
+    </p>
+
+    <p>
+      <strong>Grupo muscular:</strong>
+      <%= @exercise.muscle_group %>
+    </p>
+
+    <p>
+      <strong>Descripcción:</strong>
+      <%= @exercise.description.html_safe %>
+    </p>
+    <%= link_to "Volver a la rutina", view_rutine_path(params[:rutine]) , class: "btn btn-secondary mt-4" %>
+
+  </div>
+</main>

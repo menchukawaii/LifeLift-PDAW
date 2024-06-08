@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "my-account", to: "inscriptions#my_account", as: :my_account
   get "my-account/:rutine", to: "inscriptions#view_rutine", as: :view_rutine
+  get "my-account/:rutine/exercise/:exercise", to: "inscriptions#view_exercise", as: :view_exercise
   post "my-account/:set/done", to: "inscriptions#done_rutine_set", as: :done_rutine_set
   resources :inscriptions, only: [:new, :create, :edit, :update]
 

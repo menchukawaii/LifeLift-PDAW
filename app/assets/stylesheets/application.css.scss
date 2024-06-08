@@ -88,10 +88,33 @@
     --bs-gradient: none;
 }
 
+.navbar {
+	--bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+	--bs-navbar-toggler-border-color: rgba(white, 0.15);
+}
+
+.navbar-toggler {
+	border: var(--bs-border-width) solid transparent;
+}
+
+.navbar-toggler:focus {
+	box-shadow: none;
+}
+
 body{
     font-family: var(--font-family);
-    // background-color: var(--color-purple-light);
+		position: relative;
 }
+  
+.img-bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	margin-top: -50px;
+	z-index: -1;
+}
+
 
 h1,h2,h3,h4,h5,h6{
     font-family: var(--headins-font-family);
@@ -169,91 +192,42 @@ a:hover{
     font-size: 14px;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-    #banner-title h3{
-        font-weight: 300;
-        font-size: 18px;
-    }
-    #banner-title h2{
-        font-weight: 800;
-        font-size: 25px;
-        margin: 20px 0;
-    }
-    #banner-title p{
-        font-weight: 300;
-        font-size: 14px;
-    }
+
+
+// LOGIN ___________________________________________________________________________________________________
+.login{
+	background-color: var(--color-background-dark);
+	display: grid;
+  place-content: center;
+	min-height: 95vh;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    #banner-title{
-        min-height: 80vh;
-    }
-    
-    #banner-title h3{
-        font-weight: 300;
-        font-size: 26px;
-    }
-    #banner-title h2{
-        font-weight: 800;
-        font-size: 35px;
-        margin: 30px 0 50px 0;
-    }
-    #banner-title p{
-        font-weight: 300;
-        font-size: 22px;
-    }
-    #banner-title #banner-btn{
-        font-size: 20px;
-        padding: 20px 40px;
-        margin-top: 30px;
-    }
+.login-form{
+	color: white;
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    #banner-title h3{
-        font-weight: 300;
-        font-size: 26px;
-    }
-    #banner-title h2{
-        font-weight: 800;
-        font-size: 35px;
-        // margin: 50px 0;
-    }
-    #banner-title p{
-        font-weight: 300;
-        font-size: 22px;
-    }
+.login-form .form-label{
+	font-size: 18px;
+	margin-top: 15px;
 }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-    #banner-title{
-        width: 60%;
-        padding: 10%;
-        min-height: 95vh;
-    }
-    
-    #banner-title h3{
-        font-weight: 400;
-        font-size: 35px;
-    }
-    #banner-title h2{
-        font-weight: 800;
-        font-size: 80px;
-        // margin: 50px 0;
-    }
-    #banner-title p{
-        font-weight: 300;
-        font-size: 25px;
-    }
+.login-form .form-control{
+	background-color: transparent;
+	border: 1px solid white;
+	color: white;
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {}
+.login-form .btn{
+	margin: 30px 0;
+	width: 100%;
+}
+
+.login-form .login-links{
+	text-align: center;
+	font-size: 18px;
+}
+
+
 
 nav.pagination{
     padding: 20px 0;
@@ -267,3 +241,116 @@ nav.pagination{
     color: var(--color-purple); 
     width: 50px;   
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	// HOME ___________________________________________________________________________________________________
+	#banner-title h3{
+			font-weight: 300;
+			font-size: 18px;
+	}
+	#banner-title h2{
+			font-weight: 800;
+			font-size: 25px;
+			margin: 20px 0;
+	}
+	#banner-title p{
+			font-weight: 300;
+			font-size: 14px;
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	// HOME ___________________________________________________________________________________________________
+	#banner-title{
+			min-height: 80vh;
+	}
+	
+	#banner-title h3{
+			font-weight: 300;
+			font-size: 26px;
+	}
+	#banner-title h2{
+			font-weight: 800;
+			font-size: 35px;
+			margin: 30px 0 50px 0;
+	}
+	#banner-title p{
+			font-weight: 300;
+			font-size: 22px;
+	}
+	#banner-title #banner-btn{
+			font-size: 20px;
+			padding: 20px 40px;
+			margin-top: 30px;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	// HOME ___________________________________________________________________________________________________
+	#banner-title h3{
+			font-weight: 300;
+			font-size: 26px;
+	}
+	#banner-title h2{
+			font-weight: 800;
+			font-size: 35px;
+			// margin: 50px 0;
+	}
+	#banner-title p{
+			font-weight: 300;
+			font-size: 22px;
+	}
+
+	// LOGIN ___________________________________________________________________________________________________
+.login{
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.login-form{
+	width: 35%;
+	padding: 5% 0 5% 5%;
+}
+
+.login-img{
+	width: 60%;
+	height: 95vh;
+	background-image: url("mujer-abdominales.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top right;
+}
+}
+
+
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	// HOME ___________________________________________________________________________________________________
+	#banner-title{
+			width: 60%;
+			padding: 10%;
+			min-height: 95vh;
+	}
+	
+	#banner-title h3{
+			font-weight: 400;
+			font-size: 35px;
+	}
+	#banner-title h2{
+			font-weight: 800;
+			font-size: 80px;
+			// margin: 50px 0;
+	}
+	#banner-title p{
+			font-weight: 300;
+			font-size: 25px;
+	}
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}

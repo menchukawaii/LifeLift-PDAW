@@ -55,6 +55,10 @@ class InscriptionsController < ApplicationController
     @rutine = current_user.rutines.find(params[:rutine])
   end
 
+  def view_exercise
+    @exercise = Exercise.find(params[:exercise])
+  end
+
   def done_rutine_set
     @rutine_set = current_user.rutine_sets.find(params[:set])
     @rutine_set.is_done = true

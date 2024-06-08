@@ -32,7 +32,7 @@
   </div>
 
   <div class="mt-4">
-    <%= form.label :trainer_id, "Asignar Entrenador", class: "form-label" %>    
+    <%= form.label :trainer_id, "Asignar Entrenador", class: "form-label" %>
     <%= form.collection_select(:trainer_id, User.where(is_trainer: true), :id, :name, {include_blank: true}, class: "form-control") %>
   </div>
 
