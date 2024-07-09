@@ -1,24 +1,5 @@
-# README
+# LIFELIFT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es mi proyecto para el ciclo formativo de Desarrollo de Aplicaciones Web
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Carmen García Rodríguez**
